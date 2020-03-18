@@ -30,7 +30,8 @@ enum cache_swap_style {
     CACHE_SWAP_SRRIP,
     CACHE_SWAP_SRRIP_FP,
     CACHE_SWAP_BRRIP,
-    CACHE_SWAP_DRRIP
+    CACHE_SWAP_DRRIP,
+    CACHE_SWAP_SWING
 };
 
 class Cache_Line {
@@ -62,6 +63,8 @@ public:
     _u64 cache_line_shifts;
     /**缓存替换算法*/
     int swap_style;
+
+    _u64* cycle_index;
 
     /**指令计数器*/
     _u64 tick_count;

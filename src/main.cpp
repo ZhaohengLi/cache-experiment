@@ -26,7 +26,7 @@ int main(const int argc, const char *argv[]) {
     //_u64 cache_size[] = {0x400000,0x800000};//cache大小:4M, 8M
     _u64 cache_size[] = {0x400000};//cache大小:4M
     //cache_swap_style swap_style[] = {CACHE_SWAP_LRU};
-    cache_swap_style swap_style[] = {CACHE_SWAP_RAND, CACHE_SWAP_LRU, CACHE_SWAP_FRU, CACHE_SWAP_SRRIP, CACHE_SWAP_SRRIP_FP, CACHE_SWAP_BRRIP, CACHE_SWAP_DRRIP};
+    cache_swap_style swap_style[] = {CACHE_SWAP_RAND, CACHE_SWAP_SWING, CACHE_SWAP_LRU, CACHE_SWAP_FRU, CACHE_SWAP_SRRIP_FP};
     int ms[] = {3};
 
     int i, j, m, k, n;

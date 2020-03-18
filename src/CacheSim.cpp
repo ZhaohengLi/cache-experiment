@@ -82,6 +82,7 @@ void CacheSim::init(_u64 a_cache_size, _u64 a_cache_line_size, _u64 a_mapping_wa
     // 其二进制占用位数，同其他shifts
     cache_set_shifts = (_u64) log2(cache_set_size);
 
+    cycle_index = new _u64[cache_set_size];
 
     cache_r_count = 0;
     cache_w_count = 0;
@@ -217,6 +218,13 @@ int CacheSim::cache_find_victim(_u64 set_base , int a_swap_style, int hit_index)
     switch (a_swap_style) {
         case CACHE_SWAP_RAND:
             free_index = rand() % cache_mapping_ways;
+            break;
+        case CACHE_SWAP_SWING:
+            // INT32 id = (self_ptr[setIndex] / assoc) & 1 ? assoc - 1 - self_ptr[setIndex] % assoc : self_ptr[setIndex] % assoc;
+            // ++self_ptr[setIndex];
+            // return id;
+            free_index = (cycle_index[set_base]/cache_mapping_ways) & 1 ? cache_mapping_ways - 1 - cycle_index[set_base] % cache_mapping_ways : cycle_index[set_base] % cache_mapping_ways;
+            ++cycle_index[set_base];
             break;
         case CACHE_SWAP_LRU:
             max_LRU = 0;
@@ -515,6 +523,9 @@ void CacheSim::load_trace(const char *filename) {
     switch (swap_style) {
         case CACHE_SWAP_RAND:
             strcpy(a_swap_style, "RAND");
+            break;
+        case CACHE_SWAP_SWING:
+            strcpy(a_swap_style, "SWING");
             break;
         case CACHE_SWAP_LRU:
             strcpy(a_swap_style, "LRU");
