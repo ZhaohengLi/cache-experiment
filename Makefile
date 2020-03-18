@@ -5,8 +5,8 @@ build: clean
 update:
 	make -C build
 
-run:
-	./bin/CacheSim -i ./data/wangzherongyao60fps_b620_1.txt
+run: build
+	./bin/CacheSim -i ./data/wangzherongyao60fps_b620_1.txt > ./result/wangzherongyao60fps_b620_1.txt
 
 clean:
-	rm -rf build bin
+	rm -rf build bin result
