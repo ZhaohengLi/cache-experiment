@@ -10,7 +10,9 @@
 
 \begin{document}
 \maketitle
-
+\newpage
+\tableofcontents
+\newpage
 \section{实验背景}
 在终端设备上随着游戏的画质、特效、帧率需求的日渐增长，使得这些场景下的访存密集型特点越发显著，对内存的带宽需求不断增长，最终造成游戏场景下芯片功耗的大幅增加。现有处理器主要采用 Cache-Memory层次存储结构，通过Cache缓存频繁访问的程序和数据，减少对内存的访问。然而目前在游戏场景下，SoC芯片System Cache的命中率非常低，需要重新优化Cache替换策略，提高Cache的命中率。
 
@@ -159,10 +161,47 @@ Swing替换策略的命中率略低，为$(26.8293\%)$，这是由于在“淘�
 
 
 \subsection{实际测试与结果分析}
+在实验中，我们规定Cache大小为4MB，Cache块大小为64B，组相连度为32路，Cache采用写回策略和写分配策略。
 
+\subsubsection{命中率统计}
+在替换策略命中率方面统计如下图所示。（在多次试验中，SRRIP，SRRIP\_FP，BRRIP和DRRIP替换策略命中率表现接近，以其中表现最好的SRRIP\_FP为代表进行对比。）
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{pic11.png}
+    \caption{命中率统计数据}
+\end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{pic6.png}
+    \caption{命中率统计}
+\end{figure}
+在图中可以看出，Swing替换策略命中率表现一般，命中率排序由差到好为：Random，FRU，Swing，LRU，SRRIP\_FP。
 
+替换策略在各个Trace文件中的表现如下图所示。
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{pic7.png}
+    \caption{命中率统计}
+\end{figure}
+可以看到，各个替换策略在这些Trace文件的表现相似，在王者荣耀的访问数据上表现较好，在Fortnite上表现较差。这说明王者荣耀的访问数据相关度与其他游戏相比较高。
+
+\subsubsection{运行时间统计}
+在如下配置，不使用多线程的情况下，各个替换策略在Trace文件下的运行时间如下图所示。
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{pic8.png}
+    \caption{计算机配置}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{pic10.png}
+    \includegraphics[width=0.7\textwidth]{pic9.png}
+    \caption{运行时间统计}
+\end{figure}
+可以看到Swing替换策略和Random替换策略用时相当，并且远远的小于其他其他替换策略。这也验证了Swing替换策略时间复杂度为$O(1)$。
 
 \section{实验总结}
 本次实验中，我深入学习了主流替换策略的核心算法，并在模拟器上实现了自己的替换策略。实验证明，该策略相比LRU来说缺失率相近，相比随机算法来说缺失率降低，在某些数据上表现比较好。通过本次实验，我对Cache的工作方式理解更加深刻了。

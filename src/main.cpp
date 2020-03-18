@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "CacheSim.h"
 #include "argparse.hpp"
-
+#include "time.h"
 using namespace std;
 
 int main(const int argc, const char *argv[]) {
@@ -44,7 +44,11 @@ int main(const int argc, const char *argv[]) {
                         temp_swap_style = swap_style[n];
                         cache.init(temp_cache_size, temp_line_size, temp_ways, temp_swap_style);
                         cache.set_M(ms[k]);
+                        clock_t start,end;
+                        start = time(NULL);
                         cache.load_trace(parser.retrieve<string>("input").c_str());
+                        end = time(NULL) ;
+                        printf("time: %.0f s\n", difftime(end,start)) ;
                         cache.re_init();
                     }
                 }

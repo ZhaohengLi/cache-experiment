@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.3.7)  18 MAR 2020 19:01
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.3.7)  18 MAR 2020 20:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -591,36 +591,56 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 12.
  [1
 
-]
+] (./report.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.53937> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 4.
+)
+\tf@toc=\write3
+\openout3 = `report.toc'.
+
+ [2] [3]
 File: pic1.png Graphic file (type bmp)
 <pic1.png>
- [2]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.53937> on input line 76.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 76.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 76.
- [3]
+ [4]
 File: pic2.png Graphic file (type bmp)
 <pic2.png>
+
+[5]
 File: pic3.png Graphic file (type bmp)
 <pic3.png>
- [4]
+ [6]
 File: pic4.png Graphic file (type bmp)
 <pic4.png>
- [5]
+ [7]
 File: pic5.png Graphic file (type bmp)
 <pic5.png>
- [6] [7]
-(./report.aux) ) 
+ [8]
+File: pic11.png Graphic file (type bmp)
+<pic11.png>
+File: pic6.png Graphic file (type bmp)
+<pic6.png>
+ [9]
+File: pic7.png Graphic file (type bmp)
+<pic7.png>
+File: pic8.png Graphic file (type bmp)
+<pic8.png>
+ [10]
+File: pic10.png Graphic file (type bmp)
+<pic10.png>
+File: pic9.png Graphic file (type bmp)
+<pic9.png>
+ [11] [12] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 16352 strings out of 492916
- 381647 string characters out of 6133346
- 441161 words of memory out of 5000000
- 20282 multiletter control sequences out of 15000+600000
+ 16393 strings out of 492916
+ 383016 string characters out of 6133346
+ 443161 words of memory out of 5000000
+ 20314 multiletter control sequences out of 15000+600000
  536280 words of font info for 60 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  56i,6n,74p,367b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on report.xdv (7 pages, 71984 bytes).
+Output written on report.xdv (12 pages, 100768 bytes).
