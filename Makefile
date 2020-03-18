@@ -6,7 +6,7 @@ update:
 	make -C build
 
 run:
-	./bin/CacheSim -i ./data/fortnite60fps_b620_2.txt
+	./bin/CacheSim -i ./data/example.txt
 
 clean:
 	rm -rf build bin result
