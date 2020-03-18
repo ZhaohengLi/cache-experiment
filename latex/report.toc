@@ -7,7 +7,7 @@
 \contentsline {subsection}{\numberline {3.4}LFU替换策略}{3}% 
 \contentsline {subsection}{\numberline {3.5}RRIP替换策略}{4}% 
 \contentsline {subsection}{\numberline {3.6}Clock替换策略}{4}% 
-\contentsline {section}{\numberline {4}设计替换策略}{4}% 
+\contentsline {section}{\numberline {4}自行设计替换策略}{4}% 
 \contentsline {subsection}{\numberline {4.1}替换策略核心思想}{4}% 
 \contentsline {subsection}{\numberline {4.2}适用场景分析以及命中率分析}{5}% 
 \contentsline {subsubsection}{\numberline {4.2.1}循环访问方式测试}{5}% 
@@ -17,4 +17,5 @@
 \contentsline {subsection}{\numberline {4.3}实际测试与结果分析}{9}% 
 \contentsline {subsubsection}{\numberline {4.3.1}命中率统计}{9}% 
 \contentsline {subsubsection}{\numberline {4.3.2}运行时间统计}{11}% 
+\contentsline {subsubsection}{\numberline {4.3.3}综合总结}{12}% 
 \contentsline {section}{\numberline {5}实验总结}{12}% 
